@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #quizContainer {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #quizContainer h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+        }
+        #quiz {
+            padding: 10px 0;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answer {
+            margin-bottom: 10px;
+        }
+        #navigation {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #navigation button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container input[type="submit"],
+        .button-container input[type="reset"] {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container input[type="submit"]:hover,
+        .button-container input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quizContainer">
+        <h2>Sport quiz</h2>
+        <div id="quiz"></div>
+        <div id="navigation">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+        <div id="results"></div>
+        <div class="button-container">
+            <input type="submit" id="quizSubmit" value="Submit Answers"> 
+            <input type="reset" id="quizReset" value="Reset Answers"> 
+        </div>
+    </div>
+    <script src="test.js"></script>
+</body>
+</html>
