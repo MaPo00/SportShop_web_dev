@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опитування</title>
+    <style>
+        .survey-container {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px; 
+            margin: 0 auto; 
+            background-color: #f9f9f9;
+        }
+        .survey-container h2 {
+            margin-top: 0;
+        }
+        .survey-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .survey-container input[type="text"],
+        .survey-container input[type="number"],
+        .survey-container select,
+        .survey-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .survey-container input[type="range"] {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .survey-container button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .survey-container button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .survey-results {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            display: none; /* Початково приховані таблиці */
+        }
+        .survey-results th, .survey-results td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .survey-results th {
+            background-color: #f2f2f2;
+        }
+        .hidden {
+            display: none; /* Приховані заголовки */
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <form id="surveyForm">
+            <h2>Опитування</h2>
+            <ol>
+                <li>
+                    <label>Ваше прізвище та ім'я</label>
+                    <input type="text" name="userName">
+                </li>
+                <li>
+                <label>Яку категорію товарів ви найчастіше придбаєте?</label>
+                    <select name="category">
+                    <option value="protein">Протеїни</option>
+                    <option value="vitamins">Вітаміни</option>
+                    <option value="supplements">Додаткові добавки</option>
+                    </select> 
+                </li>
+                <li>
+                    <label>На скільки ви задоволені останньою покупкою?</label>
+                    <input type="range" name="satisfactionLevel" min="1" max="10">
+                </li>
+                <li>
+                    <label>Який ваш улюблений смак протеїнового коктейлю?</label><br>
+                    <input type="radio" name="proteinFlavor" value="chocolate">Шоколад<br>
+                    <input type="radio" name="proteinFlavor" value="vanilla">Ваніль<br>
+                    <input type="radio" name="proteinFlavor" value="strawberry">Полуниця<br>
+                </li>
+                <li>
+                    <label>Як часто ви вживаєте спортивні добавки?</label>
+                    <select name="supplementFrequency">
+                        <option value="daily">Щоденно</option>
+                        <option value="weekly">Щотижнево</option>
+                        <option value="monthly">Щомісяця</option>
+                        <option value="occasionally">Рідко</option> 
+                    </select>
+                </li>
+                <li>
+                    <label>Яка стратегія харчування ви використовуєте?</label><br>
+                    <input type="checkbox" name="nutritionStrategy" value="highProtein">Високобілкова<br>
+                    <input type="checkbox" name="nutritionStrategy" value="lowCarb">Низько вуглеводна<br>
+                    <input type="checkbox" name="nutritionStrategy" value="balanced">Збалансована<br>
+                </li>
+                <li>
+                    <label>Чи маєте ви алергію на певні продукти спортивного харчування?</label><br>
+                    <input type="radio" name="allergy" value="yes">Так<br>
+                    <input type="radio" name="allergy" value="no">Ні<br>
+                </li>
+                <li>
+                    <label>Як часто ви займаєтесь спортивними тренуваннями?</label>
+                    <select name="activityLevel">
+                        <option value="sedentary">Малорухливий</option>
+                        <option value="moderate">Помірно активний</option>
+                        <option value="active">Активний</option>
+                        <option value="veryActive">Дуже активний</option>
+                    </select>
+                </li>
+                <li>
+                    <label>Чи дотримуєтеся ви певних дієтарних обмежень?</label>
+                    <input type="text" name="dietRestrictions">
+                </li>
+                <li>
+                    <label>Залиште ваш відгук щодо якості обслуговування:</label><br>
+                    <textarea name="feedback" rows="4" cols="50"></textarea>         
+                </li>
+            </ol>
+            <button type="submit">Надіслати</button>
+        </form>   
+        <button id="showResultsButton">Показати результати</button>
+    </div>
+    <h2 class="hidden">Результати опитування (алергія на протеїни)</h2>
+    <table class="survey-results" id="proteinAllergyResults">
+        <thead>
+            <tr>
+                <th>Ім'я</th>
+            </tr>
+        </thead>
+        <tbody id="proteinAllergyResultsBody">
+            <!-- Тут будуть імена користувачів з алергією на протеїни -->
+        </tbody>
+    </table>
+
+    <h2 class="hidden">Результати опитування (збалансоване харчування)</h2>
+    <table class="survey-results" id="balancedNutritionResults">
+        <thead>
+            <tr>
+                <th>Ім'я</th>
+            </tr>
+        </thead>
+        <tbody id="balancedNutritionResultsBody">
+            <!-- Тут будуть імена користувачів зі збалансованим харчуванням -->
+        </tbody>
+    </table>
+
+    <h2 class="hidden">Результати опитування (малорухливість)</h2>
+    <table class="survey-results" id="sedentaryResults">
+        <thead>
+            <tr>
+                <th>Ім'я</th>
+            </tr>
+        </thead>
+        <tbody id="sedentaryResultsBody">
+            <!-- Тут будуть імена малорухливих користувачів -->
+        </tbody>
+    </table>
+
+    <script>
+        const surveyForm = document.getElementById('surveyForm');
+
+        surveyForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(surveyForm);
+            const surveyResults = JSON.parse(localStorage.getItem('surveyResults')) || {};
+
+            const timestamp = new Date().getTime();
+
+            surveyResults[formData.get('userName')] = {};
+
+            for (const [name, value] of formData.entries()) {
+                surveyResults[formData.get('userName')][name] = value;
+            }
+
+            localStorage.setItem('surveyResults', JSON.stringify(surveyResults));
+
+            alert('Результати опитування успішно збережені!');
+            surveyForm.reset();
+        });
+
+        const surveyResults = JSON.parse(localStorage.getItem('surveyResults')) || {};
+
+        const proteinAllergyResultsBody = document.getElementById('proteinAllergyResultsBody');
+        const balancedNutritionResultsBody = document.getElementById('balancedNutritionResultsBody');
+        const sedentaryResultsBody = document.getElementById('sedentaryResultsBody');
+
+        const filterProteinAllergyUsers = () => {
+            const proteinAllergyUsers = [];
+            
+            for (const userName in surveyResults) {
+                const userResults = surveyResults[userName];
+                if (userResults.allergy === 'yes' && userResults.category === 'protein') {
+                    proteinAllergyUsers.push(userName);
+                }
+            }
+
+            return proteinAllergyUsers;
+        };
+
+        const filterBalancedNutritionUsers = () => {
+            const balancedNutritionUsers = [];
+
+            for (const userName in surveyResults) {
+                const userResults = surveyResults[userName];
+                if (userResults.nutritionStrategy === 'balanced') {
+                    balancedNutritionUsers.push(userName);
+                }
+            }
+
+            return balancedNutritionUsers;
+        };
+
+        const filterSedentaryUsers = () => {
+            const sedentaryUsers = [];
+
+            for (const userName in surveyResults) {
+                const userResults = surveyResults[userName];
+                if (userResults.activityLevel === 'sedentary') {
+                    sedentaryUsers.push(userName);
+                }
+            }
+
+            return sedentaryUsers;
+        };
+
+        const showResultsButton = document.getElementById('showResultsButton');
+        showResultsButton.addEventListener('click', function() {
+            showResultsButton.style.display = 'none'; // Приховати кнопку після натискання
+
+            // Функції для відображення результатів опитування
+            const displayUsersWithProteinAllergy = () => {
+                proteinAllergyResultsBody.innerHTML = '';
+
+                const proteinAllergyUsers = filterProteinAllergyUsers();
+
+                proteinAllergyUsers.forEach(userName => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `<td>${userName}</td>`;
+                    proteinAllergyResultsBody.appendChild(newRow);
+                });
+            };
+
+            const displayUsersWithBalancedNutrition = () => {
+                balancedNutritionResultsBody.innerHTML = '';
+
+                const balancedNutritionUsers = filterBalancedNutritionUsers();
+
+                balancedNutritionUsers.forEach(userName => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `<td>${userName}</td>`;
+                    balancedNutritionResultsBody.appendChild(newRow);
+                });
+            };
+
+            const displaySedentaryUsers = () => {
+                sedentaryResultsBody.innerHTML = '';
+
+                const sedentaryUsers = filterSedentaryUsers();
+
+                sedentaryUsers.forEach(userName => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `<td>${userName}</td>`;
+                    sedentaryResultsBody.appendChild(newRow);
+                });
+            };
+
+            // Відображення результатів
+            displayUsersWithProteinAllergy();
+            displayUsersWithBalancedNutrition();
+            displaySedentaryUsers();
+
+            // Показати таблиці з результатами
+            const surveyResultsTables = document.querySelectorAll('.survey-results');
+            surveyResultsTables.forEach(table => {
+                table.style.display = 'table';
+            });
+        });
+    </script>
+</body>
+</html>

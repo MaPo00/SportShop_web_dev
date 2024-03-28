@@ -1,0 +1,125 @@
+body {
+    background-color: #FFCCCC; /* Ніжно світло-червоний */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.centerbtw {
+    display: flex;
+    justify-content: space-between;
+
+}
+section {
+    border: 4px solid #FF9999;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 48%;
+    opacity: 0; /* Додаємо початкову прозорість */
+    animation: appear 1s forwards; /* Виправлений синтаксис анімації */
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 1400px){
+    header{
+        padding: 17px 3%;
+        transition: .2s;
+    }
+    header.sticky{
+        padding: 10px 3%;
+        transition: .2s;
+    }
+    section{
+        padding: 80px 3%;
+        transition: .2s;
+
+    }
+    :root{
+    --big-font: 4.5rem;
+        --h2-font: 2.3rem;
+        --p-font: 1rem;
+        transition: .2s;
+    }
+}
+
+/* Add your existing styles */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1040px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 270px;
+        height: 120vh;
+        background: var(--second-colour);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 150px 30px;
+        transition: 0.5s all;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.2rem 0;
+    }
+
+    .open {
+        right: 0;
+    }
+}
+@media (max-width: 575px){
+    .list{
+        width: 100%;
+    }
+    .newletter form{
+        width: 350px;
+    }
+        :root {
+            --big-font: 3.8rem;
+            --h2-font: 1.8rem;
+            transition: .2s;
+        }
+        .text {
+            text-align: center;
+        }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #FFCCCC;
+}
+
+th {
+    background-color: #FFCCCC;
+}
+
+address {
+    flex-grow: 1;
+    text-align: right;
+}
