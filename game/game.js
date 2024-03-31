@@ -7,7 +7,7 @@ var h = canvas.height;
 var cw = 10;
 var d;
 var food;
-
+var score; 
 
 var snake_array;
 	
@@ -17,6 +17,8 @@ function init()
 	create_snake();	
 	create_food(); 	
 	
+	score = 0;
+
 	if(typeof game_loop != "undefined") clearInterval(game_loop);
 	game_loop = setInterval(paint, 60); //using a timer which will trigger the paint function every 60ms
 }	
@@ -74,7 +76,8 @@ function paint()
 	if(nx==food.x&&ny==food.y)
 	{
 		var tail = {x:nx,y:ny};			// if the new head position matches with that of the food, crete a new head instead of moving the tail
-										
+		score++;
+
 		create_food();
 	}
 	else
@@ -94,6 +97,9 @@ function paint()
 
 	
 	paint_food(food.x,food.y);
+
+	var score_text = "Score:" + score;
+	ctx.fillText(score_text, 5, h-5);
 }
 	
 
