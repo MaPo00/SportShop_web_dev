@@ -1,4 +1,3 @@
-// Canvas
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var w = canvas.width;
@@ -8,9 +7,8 @@ var cw = 10;
 var d;
 var food;
 var score; 
-
 var snake_array;
-	
+
 function init()
 {
 	d = "right";
@@ -24,7 +22,7 @@ function init()
 }	
 init();
 	
-	
+
 function create_snake()
 {
 	var length = 5; 	//start snake lenght
@@ -100,6 +98,9 @@ function paint()
 
 	var score_text = "Score:" + score;
 	ctx.fillText(score_text, 5, h-5);
+
+	ctx.fillStyle = "black";
+	
 }
 	
 
@@ -143,5 +144,6 @@ function checkKeycode(event)
 
     return false;
 }
+
 
 document.onkeydown = checkKeycode;
