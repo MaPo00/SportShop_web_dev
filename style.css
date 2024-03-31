@@ -12,6 +12,20 @@ body {
     justify-content: space-between;
 
 }
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Два стовпці автоматичної ширини */
+    grid-template-rows: repeat(2, auto); /* Два рядки автоматичної висоти */
+    grid-gap: 5px; /* Відступ між рядками та колонками */
+}
+
+.logo-container img {
+    width: 60px; /* Розмір картинок */
+    height: 60px;
+}
+
+
+
 section {
     border: 4px solid #FF9999;
     border-radius: 10px;

@@ -1,111 +1,109 @@
 {
-    "testName": "Тест з спортивного харчування",
-    "questions": [
-      {
-        "question": "Який продукт є джерелом високоякісних білків?",
-        "answers": [
-          {
-            "answer": "Буряк",
-            "isCorrect": false
-          },
-          {
-            "answer": "Картопля",
-            "isCorrect": false
-          },
-          {
-            "answer": "Куряче філе",
-            "isCorrect": true
-          },
-          {
-            "answer": "Молоко",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "question": "Яка стратегія харчування підходить для масового набору м'язової маси?",
-        "answers": [
-          {
-            "answer": "Низько вуглеводна",
-            "isCorrect": false
-          },
-          {
-            "answer": "Високобілкова",
-            "isCorrect": true
-          },
-          {
-            "answer": "Збалансована",
-            "isCorrect": false
-          },
-          {
-            "answer": "Кетогенна",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "question": "Який продукт допомагає відновлювати глікоген в м'язах після тренування?",
-        "answers": [
-          {
-            "answer": "Печінка",
-            "isCorrect": false
-          },
-          {
-            "answer": "Мед",
-            "isCorrect": false
-          },
-          {
-            "answer": "Банан",
-            "isCorrect": true
-          },
-          {
-            "answer": "Оливкова олія",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "question": "Які вуглеводи є швидкими?",
-        "answers": [
-          {
-            "answer": "Крупи",
-            "isCorrect": false
-          },
-          {
-            "answer": "Фрукти",
-            "isCorrect": true
-          },
-          {
-            "answer": "Мед",
-            "isCorrect": false
-          },
-          {
-            "answer": "Овочі",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "question": "Яка їжа може бути джерелом енергії перед тренуванням?",
-        "answers": [
-          {
-            "answer": "Салат",
-            "isCorrect": false
-          },
-          {
-            "answer": "Морозиво",
-            "isCorrect": false
-          },
-          {
-            "answer": "Гречка",
-            "isCorrect": true
-          },
-          {
-            "answer": "Суп",
-            "isCorrect": false
-          }
-        ]
-      }
-    ]
-  }
-  
+  "questions": [
+    {
+      "question": "Який продукт є джерелом високоякісних білків?",
+      "answers": [
+        {
+          "answer": "Буряк",
+          "correct": false
+        },
+        {
+          "answer": "Картопля",
+          "correct": false
+        },
+        {
+          "answer": "Куряче філе",
+          "correct": true
+        },
+        {
+          "answer": "Молоко",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Яка стратегія харчування підходить для масового набору м'язової маси?",
+      "answers": [
+        {
+          "answer": "Низько вуглеводна",
+          "correct": false
+        },
+        {
+          "answer": "Високобілкова",
+          "correct": true
+        },
+        {
+          "answer": "Збалансована",
+          "correct": false
+        },
+        {
+          "answer": "Кетогенна",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Який продукт допомагає відновлювати глікоген в м'язах після тренування?",
+      "answers": [
+        {
+          "answer": "Печінка",
+          "correct": false
+        },
+        {
+          "answer": "Мед",
+          "correct": false
+        },
+        {
+          "answer": "Банан",
+          "correct": true
+        },
+        {
+          "answer": "Оливкова олія",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Які вуглеводи є швидкими?",
+      "answers": [
+        {
+          "answer": "Крупи",
+          "correct": false
+        },
+        {
+          "answer": "Фрукти",
+          "correct": true
+        },
+        {
+          "answer": "Мед",
+          "correct": false
+        },
+        {
+          "answer": "Овочі",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Яка їжа може бути джерелом енергії перед тренуванням?",
+      "answers": [
+        {
+          "answer": "Салат",
+          "correct": false
+        },
+        {
+          "answer": "Морозиво",
+          "correct": false
+        },
+        {
+          "answer": "Гречка",
+          "correct": true
+        },
+        {
+          "answer": "Суп",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}
